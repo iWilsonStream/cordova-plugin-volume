@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://phonegap.com/ns/plugins/1.0"
+    id="cordova-plugin-volume"
+    version="1.0.0">
+    <engines>
+        <engine name="cordova" version=">=3.3.0" />
+    </engines>
+    
+    <name>volumeControl</name>
+    <description>iOS音量控制插件</description>
+    
+    <js-module src="www/VolumeControl.js" name="volumeControl">
+        <clobbers target="volumeControl" />
+    </js-module>
+    
+    <platform name="ios">
+        <source-file src="src/ios/VolumeControl.m" />
+        <header-file src="src/ios/VolumeControl.h" />
+        
+        <config-file target="config.xml" parent="/widget">
+            
+            <feature name="volumeControl">
+                <param name="ios-package" value="VolumeControl" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
+
+<!--作者：CatchZeng-->
+<!--链接：http://www.jianshu.com/p/96855e009e95-->
+<!--來源：简书-->
+<!--著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。-->
